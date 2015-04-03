@@ -1,0 +1,109 @@
+object Form8: TForm8
+  Left = 0
+  Top = 0
+  Caption = 'Form8'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object GridHelper1: TGridHelper
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 430.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    RowCount = 0
+    RowHeight = 21.000000000000000000
+    OnDrawColumnCell = GridHelper1DrawColumnCell
+    object StringColumn1: TStringColumn
+      Header = 'String Column'
+      Size.Width = 100.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object StringColumn2: TStringColumn
+      Header = 'String Column'
+      Position.X = 100.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object StringColumn3: TStringColumn
+      Header = 'String Column'
+      Position.X = 200.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+    end
+    object StringColumn4: TStringColumn
+      Header = 'String Column'
+      Position.X = 300.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+    end
+    object StringColumn5: TStringColumn
+      Header = 'String Column'
+      Position.X = 400.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+    end
+    object CheckColumn1: TCheckColumn
+      Header = 'Check Column'
+      Position.X = 500.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+    end
+  end
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Top
+    Size.Width = 640.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = Button1
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = Button2
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    object Button1: TButton
+      Align = Client
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Cell'
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Align = Client
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'AddValue'
+      OnClick = Button2Click
+    end
+  end
+end

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BEFF0FBD-7679-43ED-A6F7-535C3BDBEEBD}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Install\GridHelper.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demo\Demos.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="GridHelper">
+        <MSBuild Projects="Install\GridHelper.dproj"/>
+    </Target>
+    <Target Name="GridHelper:Clean">
+        <MSBuild Projects="Install\GridHelper.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GridHelper:Make">
+        <MSBuild Projects="Install\GridHelper.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Demos">
+        <MSBuild Projects="Demo\Demos.dproj"/>
+    </Target>
+    <Target Name="Demos:Clean">
+        <MSBuild Projects="Demo\Demos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Demos:Make">
+        <MSBuild Projects="Demo\Demos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="GridHelper;Demos"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="GridHelper:Clean;Demos:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="GridHelper:Make;Demos:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
